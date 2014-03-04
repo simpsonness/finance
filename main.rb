@@ -7,8 +7,8 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/developm
 		property :id,			 Serial, :key => true
 		property :name, 		 String, :required => true
 		property :rent,			 Integer, :required => true
-		property :automatable?,	 Bool, :default => false
-		property :controllable?, Bool, :default => false
+		property :automatable?,	 Boolean, :default => false
+		property :controllable?, Boolean, :default => false
 	end
 
 
