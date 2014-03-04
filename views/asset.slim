@@ -1,0 +1,20 @@
+== form_for (@assets) do |f|
+   .field
+    == f.label :name
+    br
+    == f.text_field :name
+   .field
+    == f.label :rent
+    br
+    == f.text_field:rent
+   .field
+    == f.label :automatable
+    br
+    == f.text_field:automatable
+   .field
+    == f.lable :controllable
+    br
+    == f.text_field:controllable
+
+    .actions
+    == f.submit
