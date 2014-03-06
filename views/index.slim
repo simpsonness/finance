@@ -1,10 +1,16 @@
-h1 Cash Flow 
+<h1>Cash Flow </h1>
 
+<form action="/form" method="post">
+  <input type="text" name="asset[name]"></br>
+  <input type="text" name="asset[rent]">
+  <input type="automatable" name="asset[automatable]">
+  <input type="controllable" name="asset[controllable]">
+  <input type="submit">
+</form>
 
-- @assets.each do |asset|
-  li.asset = asset.rent
-  
-
+<% @assets.each do |asset| %>
+  <%= asset.rent %>
+  <% end %>
 
 
 
