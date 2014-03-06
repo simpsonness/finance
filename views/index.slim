@@ -1,16 +1,19 @@
-<h1>Cash Flow </h1>
+h2 My Finance
 
-<form action="/form" method="post">
-  <input type="text" name="asset[name]"></br>
-  <input type="text" name="asset[rent]">
-  <input type="automatable" name="asset[automatable]">
-  <input type="controllable" name="asset[controllable]">
-  <input type="submit">
-</form>
+form action="/" method="POST"
+  input type="text" name="asset[name]"
+  input.button type="submit" value="New Asset"
 
-<% @assets.each do |asset| %>
-  <%= asset.rent %>
-  <% end %>
+
+
+h2 Cash Flow
+
+ul.assets
+  - @assets.each do |asset|
+    li.asset= asset.name
+
+
+
 
 
 
