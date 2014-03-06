@@ -6,7 +6,7 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/developm
 class Asset
 	include DataMapper::Resource
 	property :id,             Serial
-	property :name,           String, :required => true
+	property :rent,           Integer, :required => true
 end
 DataMapper.finalize
 
