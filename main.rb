@@ -1,4 +1,7 @@
 require 'sinatra'
+require 'erb'
+require 'data_mapper'
+require 'sinatra'
 require 'slim'
 require 'data_mapper'
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/development.db")
@@ -10,23 +13,21 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/developm
 		property :automatable?,	 Boolean, :default => false
 		property :controllable?, Boolean, :default => false
 	end
-	DataMapper.finalize
+
 
 
 get '/' do
-  @assets = Asset.all
   slim :index
 end
-
-
- get '/asset' do
- 	@asset = params[:asset]
- 	slim :asset
+ 
+get '/:item' do
+	@item = params[:item]
+	slim :item
 end
 
-post '/asset' do
-	Asset.create params[:asset]
-	redirect to ('/')
+post '/' do
+	@item = params[:item]
+	slim :item
 end
 
 
