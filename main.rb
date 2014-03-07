@@ -6,13 +6,17 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/developm
 class Asset
 	include DataMapper::Resource
 	property :id,             Serial
-	property :automatable,    Boolean, :default => false
+	property :rent,           Integer, :required => true
 end
 DataMapper.finalize
 
 get '/' do
 	@assets = Asset.all
-	slim :index
+	 sum = 0
+	@assets.each do |asset|
+	sum += asset.rent
+	slim :asset
+  end
 end
 
 get '/asset' do
@@ -21,5 +25,5 @@ end
 
 post '/' do
 	Asset.create params[:asset]
-	redirect to('/')
+    redirect to('/')
 end

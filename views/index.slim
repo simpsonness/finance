@@ -1,17 +1,13 @@
 h2 My Finance
 
 form action="/" method="POST"
-  input type="text" name="asset[automatable]"
+  input type="text" name="asset[rent]"
   input.button type="submit" value="New Asset"
 
 
 
 h2 Cash Flow
-
-ul.assets
-  - @assets.each do |asset|
-    li.asset = asset.automatable
-
+ul.sum
 
 
 
