@@ -1,0 +1,1 @@
+A simple personal finance app based on cash flow instead of assets.
