@@ -1,0 +1,25 @@
+h2 My Finance
+
+form action="/" method="POST"
+  input type="text" name="asset[rent]" 
+  input type="text" name="asset[name]" 
+  input type="submit" 
+
+
+
+h2 Cash Flow
+ul.assets
+ - @assets.each do |asset|
+   li.asset= asset.name
+   li.asset= asset.rent
+
+
+
+
+
+
+
+     
+
+
+
